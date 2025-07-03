@@ -1,0 +1,43 @@
+# .gitignore for all environments
+
+# Python
+backend-python/venv/
+backend-python/__pycache__/
+backend-python/*.pyc
+backend-python/.env
+
+# Java
+backend-java-api/target/
+backend-java-api/.idea/
+backend-java-api/.classpath
+backend-java-api/.project
+backend-java-api/.settings/
+backend-java-api/.env
+backend-java-semanticKernel/target/
+backend-java-semanticKernel/.idea/
+backend-java-semanticKernel/.classpath
+backend-java-semanticKernel/.project
+backend-java-semanticKernel/.settings/
+backend-java-semanticKernel/.env
+
+# Node/Angular
+chat-frontend/client/node_modules/
+chat-frontend/client/dist/
+chat-frontend/client/.env
+
+# OS generated
+.DS_Store
+Thumbs.db
+
+# General
+*.log
+*.env
+.env.*
+*.iml
+*.swp
+*.swo
+*.bak
+*.tmp
+
+# VSCode
+.vscode/

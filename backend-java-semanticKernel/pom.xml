@@ -1,0 +1,71 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
+                      http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.nyacs</groupId>
+  <artifactId>chatbot-backend</artifactId>
+  <version>1.0.0</version>
+
+  <properties>
+    <java.version>17</java.version>
+    <spring.boot.version>3.1.3</spring.boot.version>
+    <sk.version>0.13.8-SNAPSHOT</sk.version>
+  </properties>
+
+  <repositories>
+    <!-- Microsoft GitHub Packages for Semantic Kernel snapshots -->
+    <repository>
+      <id>microsoft-snapshot</id>
+      <url>https://maven.pkg.github.com/microsoft/semantic-kernel-java</url>
+      <releases><enabled>false</enabled></releases>
+      <snapshots><enabled>true</enabled></snapshots>
+    </repository>
+  </repositories>
+
+  <dependencies>
+    <!-- Spring Boot Web -->
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-web</artifactId>
+      <version>${spring.boot.version}</version>
+    </dependency>
+
+    <!-- Semantic Kernel API -->
+    <dependency>
+      <groupId>com.microsoft.semantic-kernel</groupId>
+      <artifactId>semantickernel-api</artifactId>
+      <version>1.4.4-RC2-SNAPSHOT</version>
+    </dependency>
+
+    <!-- Semantic Kernel Azure OpenAI service -->
+    <dependency>
+      <groupId>com.microsoft.semantic-kernel</groupId>
+      <artifactId>semantickernel-aiservices-openai</artifactId>
+      <version>1.4.4-RC2-SNAPSHOT</version>
+    </dependency>
+  </dependencies>
+
+  <build>
+    <plugins>
+      <!-- Compiler -->
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <version>3.11.0</version>
+        <configuration>
+          <source>${java.version}</source>
+          <target>${java.version}</target>
+        </configuration>
+      </plugin>
+
+      <!-- Spring Boot plugin -->
+      <plugin>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-maven-plugin</artifactId>
+        <version>${spring.boot.version}</version>
+      </plugin>
+    </plugins>
+  </build>
+</project>
