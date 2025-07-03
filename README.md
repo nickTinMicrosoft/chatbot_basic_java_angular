@@ -77,6 +77,29 @@ AZURE_SEARCH_KEY=your-azure-search-key
    mvn spring-boot:run
    ```
 
+### Setting up Java Backend 2 (`backend-java-semanticKernel`) Secrets
+
+This backend requires Azure OpenAI credentials. Do NOT hardcode secrets in `application.properties` or commit them to version control.
+
+**How to set the required variables:**
+
+1. Create a file named `application.properties` in `backend-java-semanticKernel/src/main/resources/` (if it does not exist).
+2. Add the following lines (replace with your actual values):
+
+```
+azure.openai.endpoint=your-azure-openai-endpoint
+azure.openai.key=your-azure-openai-key
+azure.openai.deploymentName=your-azure-deployment-name
+```
+
+3. Ensure `application.properties` is listed in `.gitignore` to prevent accidental commits of secrets.
+4. Alternatively, you can set these as environment variables for your Java process:
+   - `AZURE_OPENAI_ENDPOINT`
+   - `AZURE_OPENAI_KEY`
+   - `AZURE_OPENAI_DEPLOYMENTNAME`
+
+Refer to your Spring Boot configuration for how environment variables are mapped.
+
 ---
 
 ## 4. Frontend (Angular)
